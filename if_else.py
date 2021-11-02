@@ -1,5 +1,5 @@
 def main():
-  number = int(raw_input("Enter a number: ").strip())
+  number = int(raw_input().strip())
   if(number < 1 or number > 100):
     print("Number must be between 1 and 100")
   elif(number % 2 == 1):
