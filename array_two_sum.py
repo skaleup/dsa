@@ -1,10 +1,16 @@
 from typing import List
 
 def main(numbers: List[int], target: int) -> bool:
-  for index, number in numbers:
-    if(number < target):
-      numbers.index(target - number)
-  print(number)
+  result = []
+  for index, number in enumerate(numbers):
+    try:
+      second_index = numbers.index(target - number)
+      if(index != second_index):
+        result = [index, second_index]
+        break
+    except:
+      continue
+  return result        
 
 if __name__ == "__main__":
-  main([-2,1,-3,4,-1,2,1,-5,4], 9)  
+  main([2,7,11,15], 9)  
